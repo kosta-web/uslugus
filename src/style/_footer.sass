@@ -1,11 +1,14 @@
 .footer
-	padding: 28px 0 33px
+	padding: 55px 0
 	&__container
-		display: flex
-		align-items: center
-		justify-content: space-between
+		display: grid
+		gap: 14px
+		grid-template-areas: 'logo .' 'copyright contact'
 	&__logo
-		margin-bottom: 30px
+		grid-area: logo
+	&__copyright
+		grid-area: copyright
+		align-self: end
 	&__contact
-		p:first-child
-			margin-bottom: 10px
+		grid-area: contact
+		justify-self: end
