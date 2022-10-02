@@ -1,2 +1,45 @@
 .modal
 	display: none
+	font-size: 16px
+	font-weight: 300
+	position: fixed
+	inset: 0
+	padding: 40px
+	overflow-y: auto
+	cursor: pointer
+	background-color: rgba(0, 0, 0, 0.6)
+	&__title
+		font-weight: 400
+		font-size: 24px
+		text-align: center
+		margin-bottom: 24px
+	&__person
+		display: flex
+	&__body
+		position: relative
+		cursor: default
+		margin: auto
+		max-width: 768px
+		width: 100%
+		background-color: #f2f5fc
+		border-radius: 12px
+		padding: 24px 20px 48px
+	&__container
+		max-width: 632px
+		margin: 0 auto
+	&__close
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		width: 40px
+		height: 40px
+		top: 0
+		right: 0
+		transform: translate(50%, -50%)
+		color: #7b7b7b
+		background-color: #fff
+		border-radius: 50%
+		transition: color 0.3s ease-in-out
+		&:hover
+			color: #000

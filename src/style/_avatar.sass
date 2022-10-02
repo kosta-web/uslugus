@@ -1,0 +1,24 @@
+.avatar
+	&__label
+		display: flex
+		gap: 11px
+		cursor: pointer
+		transition: color 0.3s ease-in-out
+		&:hover
+			color: #096601
+			.avatar__input-text
+				background-color: #daffd7
+				color: $text
+	&__input
+		position: absolute
+		transform: scale(0)
+		&:focus + .avatar__input-text
+			background-color: #daffd7
+			border: 1px solid #096601
+	&__input-wrapper
+		position: relative
+	&__input-text
+		padding: 10px 20px
+		border: 1px solid #12df00
+		border-radius: 4px
+		transition: background-color 0.3s ease-in-out
