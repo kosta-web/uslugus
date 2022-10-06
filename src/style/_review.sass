@@ -3,11 +3,15 @@
 		font-weight: 400
 		font-size: 24px
 		margin-bottom: 16px
+		+mobile
+			font-size: 16px
 	&__list
 		display: flex
 		flex-direction: column
 		gap: 10px
 		margin-bottom: 16px
+		+mobile
+			margin-bottom: 8px
 	&__item
 		display: grid
 		grid-template-columns: 1fr 1fr
@@ -21,6 +25,8 @@
 		justify-self: end
 	&__name
 		font-weight: 400
+		+mobile
+			font-size: 14px
 	&__text
 		grid-column: span 2
 		overflow: hidden
@@ -29,6 +35,8 @@
 		-webkit-box-orient: vertical
 		line-height: 19px
 		height: calc(19px * 2)
+		+mobile
+			font-size: 14px
 		&_open
 			display: block
 			height: unset
