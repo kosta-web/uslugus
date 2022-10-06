@@ -6,6 +6,10 @@
 	grid-template-areas: 'avatar present price' 'contact contact review'
 	grid-template-columns: 50px 1fr max-content
 	gap: 20px 24px
+	+mobile
+		grid-template-areas: 'avatar .\0020 price' 'present present review' 'contact contact contact'
+		padding: 16px
+		gap: 8px
 	&_person
 		gap: 40px 14px
 	&__avatar
@@ -15,23 +19,36 @@
 	&__title
 		font-size: 24px
 		font-weight: 400
+		+mobile
+			margin-bottom: 17px
+			font-size: 18px
 	&__name
 		font-weight: 300
+		+mobile
+			font-size: 14px
 	&__price
 		grid-area: price
 		font-size: 24px
 		text-align: right
+		+mobile
+			font-size: 18px
+			padding-top: 8px
+			padding-right: 8px
 	&__contacts
-		grid-column: span 2
+		grid-area: contact
 		display: flex
 		flex-direction: column
 		gap: 8px
+		+mobile
+			font-size: 14px
 	&__review
 		grid-area: review
 		display: flex
 		gap: 16px
 		justify-content: flex-end
 		align-items: flex-end
+		+mobile
+			gap: 8px
 	&__link
 		position: relative
 		display: flex
@@ -58,3 +75,5 @@
 	&__count-review
 		padding-left: 18px
 		background: url('img/icon-comment.svg') left center no-repeat
+		+mobile
+			font-size: 14px

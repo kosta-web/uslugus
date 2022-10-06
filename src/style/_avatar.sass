@@ -1,24 +1,36 @@
 .avatar
 	&__label
 		display: flex
+		align-items: center
+		flex-wrap: wrap
 		gap: 11px
 		cursor: pointer
 		transition: color 0.3s ease-in-out
+		width: max-content
 		&:hover
 			color: #096601
 			.avatar__input-text
 				background-color: #daffd7
 				color: $text
+		+mobile
+			flex-direction: column
+			align-items: flex-start
+			gap: 16px
 	&__input
 		position: absolute
 		transform: scale(0)
 		&:focus + .avatar__input-text
 			background-color: #daffd7
 			border: 1px solid #096601
+	&__text
+		font-size: 14px
 	&__input-wrapper
 		position: relative
 	&__input-text
+		display: inline-block
 		padding: 10px 20px
 		border: 1px solid #12df00
 		border-radius: 4px
 		transition: background-color 0.3s ease-in-out
+		+mobile
+			font-size: 14px
