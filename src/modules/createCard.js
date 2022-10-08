@@ -13,7 +13,7 @@ export const createCard = item => {
 	service.dataset.id = id;
 	serviceItem.append(service);
 
-	const serviceAvatar = new Image('width: 50, height: 50');
+	const serviceAvatar = new Image(50, 50);
 	serviceAvatar.classList.add('service__avatar');
 	serviceAvatar.src = `${API_URL}/${avatar}`;
 	serviceAvatar.alt = `${category} ${surname} ${name}`;
