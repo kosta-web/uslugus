@@ -4,19 +4,23 @@ import { modalController } from './modules/modalController';
 import { selectController } from './modules/selectController';
 import { showPassword } from './modules/showPassword';
 import { choicesController } from './modules/choicesController';
-import { avatarController } from './modules/avatarController';
 import { getCategory } from './modules/getCategory';
 import { renderList } from './modules/renderList';
 import { searchControl } from './modules/searchControl';
 import { ratingController } from './modules/ratingController';
+import { signUpController } from './modules/sign';
+import { signInController } from './modules/sign';
+import { getData } from './modules/getData';
+import { API_URL } from './modules/const';
+
 
 const init = () => {
-	modalController({
+	const eventModalSignIn = modalController({
 		modal: '.modal_sign-in',
 		btnOpen: '.header__auth-btn_sign-in',
 		btnClose: '.modal__close',
 	});
-	modalController({
+	const eventModalSignUp = modalController({
 		modal: '.modal_sign-up',
 		btnOpen: '.header__auth-btn_sign-up',
 		btnClose: '.modal__close',
@@ -26,10 +30,9 @@ const init = () => {
 		btnOpen: '.service',
 		parentBtns: '.services__list',
 		btnClose: '.modal__close',
-		handlerOpenModal: async () => {
-			const data = await fetch('https://jsonplaceholder.typicode.com/todos/1').then(response =>
-				response.json(),
-			);
+		handlerOpenModal: async ({handler, modalElem}) => {
+			const data = await getData(`${API_URL}/api/service/${handler.dataset.id}`);
+			console.log(data);
 			const comments = document.querySelectorAll('.review__text');
 			comments.forEach(comment => {
 				if (comment.scrollHeight > 38) {
@@ -60,14 +63,12 @@ const init = () => {
 
 	showPassword();
 	choicesController();
-	const crp = avatarController({
-		inputFile: '.avatar__input',
-		uploadResult: '.avatar__result',
-	});
 	getCategory();
 	renderList();
 	searchControl();
 	ratingController();
+	signUpController(eventModalSignUp.closeModal);
+	signInController(eventModalSignIn.closeModal);
 };
 
 init();
