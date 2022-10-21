@@ -1,4 +1,4 @@
-export const API_URL = 'http://localhost:3024';
+export const API_URL = 'https://goldenrod-kindhearted-ogre.glitch.me';
 
 export const directions = {
 	from: 'от',
